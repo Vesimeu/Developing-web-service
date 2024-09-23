@@ -11,6 +11,7 @@ router = APIRouter()
 
 """
 Это сервис в котором находятся все основные контроллеры.
+By Vesimeu and DashaNeJdanOvA 
 """
 @router.post("/notes", response_model=Note)
 def create_note(note: NoteCreate, authorization: str = Header(...)):

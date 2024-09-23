@@ -7,8 +7,8 @@ class NoteCreate(BaseModel):
 class Note(BaseModel):
     id: int
     text: str
-    created_at: datetime
-    updated_at: datetime
+    created_at: str  # Преобразуем datetime в строку для сериализации
+    updated_at: str  # Преобразуем datetime в строку для сериализации
 
 class NoteInfo(BaseModel):
     created_at: datetime

@@ -38,9 +38,11 @@ def get_note_info_service(note_id: int) -> NoteInfo:
 def update_note_service(note_id: int, text: str) -> Note:
     note = get_note_service(note_id)
     note.text = text
-    note.updated_at = datetime.now().isoformat()
+    note.updated_at = datetime.now().isoformat()  # Преобразуем datetime в строку
+    # Преобразуем объект Note в словарь перед сериализацией
     with open(get_note_path(note_id), "w") as f:
         json.dump(note.dict(), f)
+
     return note
 
 def delete_note_service(note_id: int):
