@@ -1,6 +1,9 @@
 from pydantic import BaseModel
 from datetime import datetime
 
+class NoteCreate(BaseModel):
+    text: str
+
 class Note(BaseModel):
     id: int
     text: str

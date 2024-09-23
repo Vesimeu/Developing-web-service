@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.api import note_endpoints
-
+import sys
 
 app = FastAPI()
 

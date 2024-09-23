@@ -8,6 +8,10 @@ from fastapi import HTTPException
 NOTES_DIR = "notes"
 
 def create_note_service(text: str) -> Note:
+    #А вдруг её нет
+    if not os.path.exists(NOTES_DIR):
+        os.makedirs(NOTES_DIR)
+
     note_id = len(os.listdir(NOTES_DIR)) + 1
     note_data = {
         "id": note_id,
